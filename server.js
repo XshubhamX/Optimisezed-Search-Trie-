@@ -5,6 +5,10 @@ const { connectDB } = require("./db");
 
 const app = express();
 
+app.get("/", async (req, res, next) => {
+  return res.json({ status: "Healthy" });
+});
+
 app.get("/search", async (req, res, next) => {
   let { query, limit, pgNo } = req.query;
 
